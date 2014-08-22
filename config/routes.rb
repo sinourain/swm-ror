@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :microposts
+
   get 'about/index'
 
   get 'welcome/index'

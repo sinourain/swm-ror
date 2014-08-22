@@ -1,0 +1,23 @@
+<div class="container">
+  <%= form_for(@micropost) do |f| %>
+    <% if @micropost.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+        <ul>
+        <% @micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="well">
+        <h4>Leave a Comment:</h4>
+        <form role="form">
+            <div class="form-group">
+                <%= f.text_area(:content, class: "form-control", size: '50x3') %>  
+            </div>
+            <div><%= f.submit "Create micropost", class: "btn btn-lg btn-primary" %></div>
+        </form>
+    </div>
+  <% end %>
+</div>

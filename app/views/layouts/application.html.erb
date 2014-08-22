@@ -52,7 +52,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Profile</a></li>
-            <li><a href="/">Microposts</a></li>
+            <li><a href="microposts">Microposts</a></li>
             <li><a href="about/index">About</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -64,14 +64,14 @@
           		<%= link_to '', edit_user_registration_path, :class => 'navbar-link glyphicon glyphicon-cog' %>
           	</li>
           	<li>
-          		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
           	</li>			  
 			<% else %>
 			  <li class="active">
-			  	<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+			  	<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
 			  </li>
 			  <li>
-			  	<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+			  	<%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
 			  </li>
 			<% end %>
           </ul>
@@ -82,13 +82,14 @@
     <div class="container">
       
       
-      <!--<% if notice %>
+    <% if notice %>
 	  	<p class="alert alert-success"><%= notice %></p>
 	  <% end %>
 	  <% if alert %>
 	  	<p class="alert alert-danger"><%= alert %></p>
-	  <% end %>-->
-      <%= yield %>
+	  <% end %>
+
+    <%= yield %>
 
     </div> <!-- /container -->
     <aside id="footer-widgets">
@@ -97,7 +98,7 @@
               <div class="col-md-6">
                   <h3 class="footer-widget-title">Sitemap</h3>
                   <ul class="list-unstyled three_cols">
-                      <li><a href="index.html" class="active">Home</a></li>
+                      <li><a href="/" class="active">Home</a></li>
                       <li><a href="blog.html">Blog</a></li>
                       <li><a href="portfolio_sidebar.html">Portafolio</a></li>
                       <li><a href="portfolio_topvar.html">Works</a></li>
@@ -113,7 +114,7 @@
                   <h3 class="footer-widget-title">Subscribe</h3>
                   <p>Lorem ipsum Amet fugiat elit nisi anim mollit minim labore ut esse Duis ullamco ad dolor veniam velit.</p>
                   <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Email Adress">
+                      <input type="text" class="form-control" placeholder="Email Address">
                       <span class="input-group-btn">
                           <button class="btn btn-ar btn-primary" type="button">Subscribe</button>
                       </span>
