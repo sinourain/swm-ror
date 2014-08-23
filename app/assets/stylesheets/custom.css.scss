@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 body {
-	margin-top: 50px;
+	margin-top: 45px;
 }
 
 .container .jumbotron {
@@ -227,70 +227,6 @@ body {
 	font-weight:600;
 	font-size:16px;
 	
-}
-/*------------------------------
-	SHOWCASE
-------------------------------*/
-#showcase h2 {
-	margin-bottom:35px;
-}
-
-#showcase h4 {
-	color:#FFFFFF;
-	margin-top:15px;
-}
-
-#showcase .showcase-text {
-	text-align:left;
-}
-
-.showcase-icon {
-	font-size:75px;
-	color:#34495E;
-	display:inline-block;
-}
-
-.media-body {
-	padding-left:20px;
-}
-
-#showcase .showcase-carousel {
-	margin-top:30px;
-}
-
-.showcase-text .showcase-button i {
-	color:#FFFFFF;
-}
-
-#carousel-reference {
-	position:absolute;
-	top:28px;
-	right:37px;
-	left:37px;
-	bottom:0;
-}
-
-.carousel .carousel-control {
-	background:none;
-	width:40px;
-	height:40px;
-	background-color:rgba(237,90,100,0.4);
-	top:130px;
-	padding-top:5px;
-	display:none;
-	border-radius:50px;
-}
-
-.carousel .carousel-control.left {
-	left:10px;
-}
-
-.carousel .carousel-control.right {
-	right:10px;
-}
-
-.carousel .carousel-control:hover {
-	background-color:rgba(237,90,100,0.8);
 }
 
 /*------------------------------
