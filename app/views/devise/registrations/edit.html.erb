@@ -3,24 +3,65 @@
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
       <%= devise_error_messages! %>
 
-      <div><%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address", required: "" %></div>
+      <div><%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "off", class: "form-control", placeholder: "First name" %></div>
       <br />
+
+      <div><%= f.label :last_name %><br />
+        <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %></div>
+      <br />
+
+      <div><%= f.label :description %><br />
+        <%= f.text_area(:description, class: "form-control", placeholder: "description", size: '50x4') %></div>
+      <br />
+
+      <div><%= f.label :phone %><br />
+        <%= f.text_field :phone, class: "form-control", placeholder: "phone" %></div>
+      <br />
+
+      <div><%= f.label :bird_date %><br />
+        <%= f.text_field :bird_date, class: "form-control", placeholder: "bird date" %></div>
+      <br />
+
+      <div><%= f.label :gender %><br />
+        <%= f.text_field :gender, class: "form-control", placeholder: "gender" %></div>
+      <br />
+
+      <div><%= f.label :facebook %><br />
+        <%= f.text_field :facebook, class: "form-control", placeholder: "facebook" %></div>
+      <br />
+
+      <div><%= f.label :twitter %><br />
+        <%= f.text_field :twitter, class: "form-control", placeholder: "twitter" %></div>
+      <br />
+
+      <div><%= f.label :skype %><br />
+        <%= f.text_field :skype, class: "form-control", placeholder: "skype" %></div>
+      <br />
+
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email, class: "form-control", placeholder: "Email address", required: "" %></div>
+      <br />
+      
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
       
       <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Email address", required: "" %></div>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password", required: "" %></div>
       <br />
+      
       <div><%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Email address", required: "" %></div>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "password confirmation", required: "" %></div>
       <br />
+
       <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Email address", required: "" %></div>
+        <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "current password", required: "" %></div>
       <br />
+
       <div><%= f.submit "Update", class: "btn btn-primary" %></div>
     <% end %>
     <br />
@@ -28,7 +69,9 @@
   <div class="col-lg-5">
     <h3>Cancel my account</h3>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+    <p>Unhappy?</p>
+    <%= image_tag("unhappy-dog.jpg", class: "img-thumbnail img-responsive") %>
+    <p> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
   </div>
 </div>
 <%= link_to "Back", :back %>

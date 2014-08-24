@@ -1,16 +1,14 @@
 <div class="container">
 
-    <h2>Name and Last_Name</h2>
+    <h2><%= current_user.name %> <%= current_user.last_name %></h2>
     <p class="lead">
-        date_created
+    	last session: <%= current_user.last_sign_in_at %>
     </p>
     
     <div class="alert alert-info">
         <h4>Description</h4>
-        <p>code description</p>
+        <p><%= current_user.description %></p>
     </div>
-
-    <hr />
 
     <div class="method">
         <div class="row margin-0 list-header hidden-sm hidden-xs">
@@ -28,7 +26,7 @@
             <div class="col-md-10">
                 <div class="cell">
                     <div class="type">
-                        <p>phone</p>
+                        <p><i class="glyphicon glyphicon-earphone"></i> <%= current_user.phone %></p>
                     </div>
                 </div>
             </div>
@@ -44,7 +42,7 @@
             <div class="col-md-10">
                 <div class="cell">
                     <div class="type">
-                        <p>bird_date</p>
+                        <p><i class="glyphicon glyphicon-calendar"></i> <%= current_user.bird_date %></p>
                     </div>
                 </div>
             </div>
@@ -60,7 +58,7 @@
             <div class="col-md-10">
                 <div class="cell">
                     <div class="type">
-                        <p>gender</p>
+                        <p><%= current_user.gender %></p>
                     </div>
                 </div>
             </div>
@@ -76,7 +74,7 @@
             <div class="col-md-10">
                 <div class="cell">
                     <div class="type">
-                        <p>facebook</p>
+                        <a href="<%= current_user.facebook %>"><%= current_user.facebook %></a>
                     </div>
                 </div>
             </div>
@@ -92,7 +90,7 @@
             <div class="col-md-10">
                 <div class="cell">
                     <div class="type">
-                        <p>twitter</p>
+                        <a href="<%= current_user.twitter %>"><%= current_user.twitter %></a>
                     </div>
                 </div>
             </div>
@@ -108,7 +106,7 @@
             <div class="col-md-10">
                 <div class="cell">
                     <div class="type">
-                        <p>skype</p>
+                        <a href="<%= current_user.skype %>"><%= current_user.skype %></a>
                     </div>
                 </div>
             </div>
