@@ -4,7 +4,7 @@
   <% @microposts.each do |micropost| %>
     <li class="event">
       <p><%= micropost.content %></p>
-      <%= micropost.user.email %>
+      <%= micropost.user.name %> <%= micropost.user.last_name %>
       <%= link_to 'Edit', edit_micropost_path(micropost) %>
       <%= link_to 'Destroy', micropost, method: :delete %>
     </li>

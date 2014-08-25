@@ -55,12 +55,10 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
           	<% if user_signed_in? %>
-          	<li>
-          		<a href="profile/index">Logged in as <strong><%= current_user.name %> <%= current_user.last_name %>.</strong></a>
-          	</li>
           	<li class="active">
-          		<%= link_to '', edit_user_registration_path, :class => 'navbar-link glyphicon glyphicon-cog' %>
+          		<a href="<%= edit_user_registration_path %>">Logged in as <strong><%= current_user.name %> <%= current_user.last_name %>.</strong></a>
           	</li>
+          	
           	<li>
           		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
           	</li>			  
