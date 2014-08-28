@@ -56,11 +56,8 @@
           <ul class="nav navbar-nav navbar-right">
           	<% if user_signed_in? %>
           	<li class="active">
-          		<a href="<%= edit_user_registration_path %>"> Logged in as <strong><%= current_user.first_name %> <%= current_user.last_name %>.</strong></a>
+              <a href="<%= edit_user_registration_path %>">Logged in as <strong><%= current_user.first_name %> <%= current_user.last_name %></strong>. <span class="glyphicon glyphicon-cog"></span></a>
           	</li>
-          	<li class="active">
-              <a class="navbar-brand glyphicon glyphicon-cog" href="<%= edit_user_registration_path %>"></a>
-            </li>
           	<li>
           		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
           	</li>			  
