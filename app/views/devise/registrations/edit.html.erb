@@ -1,49 +1,58 @@
 <div class="row">
-  <div class="col-lg-7">
+  <div class="col-lg-8">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
       <%= devise_error_messages! %>
 
-      <div><%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "off", class: "form-control", placeholder: "First name" %></div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div><%= f.label :first_name %><br />
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "off", class: "form-control", placeholder: "First name" %></div>
+        </div>
+        <div class="col-lg-6">
+          <div><%= f.label :last_name %><br />
+          <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %></div>
+        </div>
+      </div>
       <br />
-
-      <div><%= f.label :last_name %><br />
-        <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %></div>
-      <br />
-
       <div><%= f.label :description %><br />
         <%= f.text_area(:description, class: "form-control", placeholder: "description", size: '50x4') %></div>
       <br />
-
-      <div><%= f.label :phone %><br />
-        <%= f.text_field :phone, class: "form-control", placeholder: "phone" %></div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div><%= f.label :phone %><br />
+          <%= f.telephone_field :phone, class: "form-control", placeholder: "phone" %></div>
+        </div>
+        <div class="col-lg-4">
+          <div><%= f.label :bird_date %><br />
+          <%= f.date_field :bird_date, class: "form-control", placeholder: "bird date" %></div>
+        </div>
+        <div class="col-lg-4">
+          <br />
+          <div><%= f.label :gender %>
+          <%= f.select(:gender, options_for_select([['Male', 1], ['Female', 0]]), class: "form-control", placeholder: "gender") %></div>
+        </div>
+      </div>
       <br />
 
-      <div><%= f.label :bird_date %><br />
-        <%= f.text_field :bird_date, class: "form-control", placeholder: "bird date" %></div>
-      <br />
-
-      <div><%= f.label :gender %><br />
-        <%= f.text_field :gender, class: "form-control", placeholder: "gender" %></div>
-      <br />
-
-      <div><%= f.label :facebook %><br />
-        <%= f.text_field :facebook, class: "form-control", placeholder: "facebook" %></div>
-      <br />
-
-      <div><%= f.label :twitter %><br />
-        <%= f.text_field :twitter, class: "form-control", placeholder: "twitter" %></div>
-      <br />
-
-      <div><%= f.label :skype %><br />
-        <%= f.text_field :skype, class: "form-control", placeholder: "skype" %></div>
-      <br />
-
-      <div><%= f.label :email %><br />
-      <%= f.email_field :email, class: "form-control", placeholder: "Email address", required: "" %></div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div><%= f.label :email %><br />
+        <%= f.email_field :email, class: "form-control", placeholder: "Email address", required: "" %></div>
+          <br />
+          <div><%= f.label :facebook %><br />
+          <%= f.url_field :facebook, class: "form-control", placeholder: "facebook" %></div>
+        </div>
+        <div class="col-lg-6">
+          <div><%= f.label :twitter %><br />
+          <%= f.url_field :twitter, class: "form-control", placeholder: "twitter" %></div>
+          <br />
+          <div><%= f.label :skype %><br />
+          <%= f.text_field :skype, class: "form-control", placeholder: "skype" %></div>
+        </div>
+      </div>
       <br />
       
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -51,48 +60,45 @@
       <% end %>
       
       <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password", required: "" %></div>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password" %></div>
       <br />
       
       <div><%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "password confirmation", required: "" %></div>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "password confirmation" %></div>
       <br />
 
       <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "current password", required: "" %></div>
       <br />
-
-      <div><%= f.submit "Update", class: "btn btn-primary" %></div>
+      <div><%= f.submit "Update", class: "btn btn-success" %></div>
     <% end %>
     <br />
   </div>
-  <div class="col-lg-5">
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy?</p>
-
-    <%= image_tag("unhappy-dog.jpg", class: "img-thumbnail img-responsive") %>
+  <div class="col-lg-4">
+    <div class="text-center">
+      <h2>Cancel my account</h2>
+      <!-- Button trigger modal -->
+      <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+      Cancel my account
+      </button> 
+    </div>
     
-    <!-- Button trigger modal -->
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      Launch demo modal
-    </button>
-    <p> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
-
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <h4 class="modal-title" id="myModalLabel">Cancel my account</h4>
           </div>
           <div class="modal-body">
-            ...
+            <h3>Unhappy?</h3>
+            <%= image_tag("unhappy-dog.jpg", class: "img-thumbnail img-responsive") %>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="text-center">
+                <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+            </div>
           </div>
         </div>
       </div>

@@ -1,117 +1,177 @@
-<div class="container">
-
-    <h2><%= current_user.name %> <%= current_user.last_name %></h2>
-    <p class="lead">
-    	last session: <%= current_user.last_sign_in_at %>
-    </p>
-    
-    <div class="alert alert-info">
-        <h4>Description</h4>
-        <p><%= current_user.description %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title glyphicon glyphicon-user"> About</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-lg-2">
+            <nav class="nav-sidebar">
+                <ul class="nav tabs">
+                  <li class="active"><a href="#tab1" data-toggle="tab">Overview</a></li>
+                  <li class=""><a href="#tab2" data-toggle="tab">Timeline</a></li>
+                  <li class=""><a href="#tab3" data-toggle="tab">Skills</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- tab content -->
+        <div class="tab-content col-lg-10">
+            <div class="tab-pane active text-style" id="tab1">
+                <div class="row" id="about">
+                    <!-- Profile image -->
+                    <div class="col-lg-2 hidden-xs scrollpoint sp-effect1 active animated fadeInLeft">
+                        <%= image_tag("mao.png", class: "img-thumbnail img-responsive") %>
+                    </div>
+                    <!-- Profile description --> 
+                    <div class="col-lg-7 scrollpoint sp-effect1 active animated fadeInLeft">
+                        <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+                        <p><%= current_user.description %></p>  
+                        <div class="container text-style social">
+                            <a data-original-title="Twitter" rel="tooltip"  href="<%= current_user.twitter %>" class="btn btn-twitter" data-placement="left">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a data-original-title="Facebook" rel="tooltip"  href="<%= current_user.facebook %>" class="btn btn-facebook" data-placement="left">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a data-original-title="Skype" rel="tooltip"  href="<%= current_user.skype %>" class="btn btn-skype" data-placement="left">
+                                <i class="fa fa-skype"></i>
+                            </a>
+                            
+                            <a data-original-title="Email" rel="tooltip"  href="<%= current_user.email %>" class="btn btn-mail" data-placement="left">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            
+                        </div>    
+                    </div>
+                    <div class="col-lg-3">
+                        <span class="glyphicon glyphicon-phone"></span> <phone> <%= current_user.phone %> </phone>
+                        <br />
+                        <span class="glyphicon glyphicon-calendar"></span> <phone> <%= current_user.bird_date %> </phone>
+                        <br />
+                        <%= link_to "Edit my account", edit_user_registration_path, class: "btn btn-primary" %>
+                    </div>
+                </div>
+                <div class="tweets"><!-- Tweets row --> 
+                    <!-- Tweets slideshow --> 
+                    <div class="media">
+                        <div class="pull-left"><i class="fa fa-twitter"></i></div>
+                        <h4>tweets @sinourain</h4>
+                        <div class="media-body">
+                            <div id="slideshow1" class="carousel slide" data-ride="carousel">
+                                  <div class="carousel-inner">
+                                   <!-- Slideshow item 1 active --> 
+                                      <div class="item">
+                                            <p>Hi everyone i just finished my last #awesome web template you can check it on #wrapbootstrap.. Fully responsive and mobile first webtheme.co</p> 
+                                      </div>
+                                   <!-- Slideshow item 2 -->    
+                                      <div class="item active">
+                                            <p>Check our new amazing portfolio on #Pixelized</p>
+                                      </div>
+                                      
+                                    <!-- Slideshow item 3 -->
+                                      <div class="item">
+                                            <p>Another very #important tweet from your twitter.</p>
+                                      </div>
+                                  </div>    
+                             </div>
+                        </div>
+                     </div>    
+                   <!-- Tweets slideshow end --> 
+                </div><!-- Tweets row end --> 
+            </div>
+            <div class="tab-pane text-style" id="tab2">
+                <h3>Timeline</h3>
+                <div class="timeline">
+                  <!-- BLOG POST 1 - START -->
+                  <div class="event">
+                      <div class="event-info">
+                        <div class="date">2012</div>
+                      </div>
+                      <span>Full-time Job Open Colombia</span>
+                  </div> <!-- BLOG POST 1 - END -->
+                  
+                  <div class="event">
+                      <div class="event-info">
+                         <div class="date">2013</div>
+                      </div>
+                      <span>Collage Graduation "Universidad Cooperativa de Colombia"</span>
+                  </div> <!-- BLOG POST 1 - END -->
+                  
+                  <div class="event">
+                      <div class="event-info">
+                         <div class="date">2014</div>
+                      </div>
+                      <span>Halftime Job "VRI Universidad del Cauca"</span>
+                  </div> <!-- BLOG POST 1 - END -->
+                  
+                  <div class="event">
+                      <div class="event-info">
+                         <div class="date">2014</div>
+                      </div>
+                      <span>Halftime Job Safe Wireless Inc</span>
+                  </div> <!-- BLOG POST 1 - END -->
+              </div><!--timeline-->
+            </div>
+            <div class="tab-pane text-style" id="tab3">
+                <h3>Skills</h3>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Skill</th>
+                          <th>Level</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <code>html5</code>
+                          </td>
+                          <td>Mid-level</td>
+                          <td>Applies the hover color to a particular row or cell</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>css</code>
+                          </td>
+                          <td>Mid-level</td>
+                          <td>Indicates a successful or positive action</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>javascript</code>
+                          </td>
+                          <td>Mid-level</td>
+                          <td>Indicates a neutral informative change or action</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>Ruby on Rails </code>
+                          </td>
+                          <td>Mid-level</td>
+                          <td>Indicates a warning that might need attention</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>AngularJS</code>
+                          </td>
+                          <td>Mid-level</td>
+                          <td>Indicates a dangerous or potentially negative action</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>Swift iOS</code>
+                          </td>
+                          <td>Entry Level</td>
+                          <td>Indicates a dangerous or potentially negative action</td>
+                        </tr>
+                      </tbody>             
+                  </table>
+            </div>
+        </div>
     </div>
-
-    <div class="method">
-        <div class="row margin-0 list-header hidden-sm hidden-xs">
-            <div class="col-md-2"><div class="header">Property</div></div>
-            <div class="col-md-10"><div class="header">Content</div></div>
-        </div>
-        <div class="row margin-0">
-            <div class="col-md-2">
-                <div class="cell">
-                    <div class="propertyname">
-                        Phone  <span class="mobile-isrequired">[Required]</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="cell">
-                    <div class="type">
-                        <p><i class="glyphicon glyphicon-earphone"></i> <%= current_user.phone %></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row margin-0">
-            <div class="col-md-2">
-                <div class="cell">
-                    <div class="propertyname">
-                        Bird Date  <span class="mobile-isrequired">[Required]</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="cell">
-                    <div class="type">
-                        <p><i class="glyphicon glyphicon-calendar"></i> <%= current_user.bird_date %></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row margin-0">
-            <div class="col-md-2">
-                <div class="cell">
-                    <div class="propertyname">
-                        Gender  <span class="mobile-isrequired">[Required]</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="cell">
-                    <div class="type">
-                        <p><%= current_user.gender %></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row margin-0">
-            <div class="col-md-2">
-                <div class="cell">
-                    <div class="propertyname">
-                        facebook  <span class="mobile-isrequired">[Required]</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="cell">
-                    <div class="type">
-                        <a href="<%= current_user.facebook %>"><%= current_user.facebook %></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row margin-0">
-            <div class="col-md-2">
-                <div class="cell">
-                    <div class="propertyname">
-                        twitter  <span class="mobile-isrequired">[Required]</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="cell">
-                    <div class="type">
-                        <a href="<%= current_user.twitter %>"><%= current_user.twitter %></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row margin-0">
-            <div class="col-md-2">
-                <div class="cell">
-                    <div class="propertyname">
-                        skype  <span class="mobile-isrequired">[Required]</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="cell">
-                    <div class="type">
-                        <a href="<%= current_user.skype %>"><%= current_user.skype %></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
+</div>
 </div>
 <div class="container">
     <h1>Microposts</h1>

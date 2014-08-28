@@ -1,106 +1,226 @@
 // Place all the styles related to the profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/* Methods */
-.method .header, .method .cell {
-  padding: 6px 6px 6px 10px; }
-.method .list-header .header {
-  font-weight: normal;
-  text-transform: uppercase;
-  color: #999;
-  background-color: #eee; }
-.method [class^="row"],
-.method [class*=" row"] {
-  border-bottom: 1px solid #ddd; }
-  .method [class^="row"]:hover,
-  .method [class*=" row"]:hover {
-    background-color: #f7f7f7; }
-.method .cell {
-  }
-  .method .cell .mobile-isrequired {
-    display: none;
-    font-weight: normal;
-    text-transform: uppercase;
-    color: #aaa;
-    font-size: 0.8em; }
-  .method .cell .propertyname {
+
+.blogShort{ border-bottom:1px solid #ddd;}
+.add{background: #333; padding: 10%; height: 300px;}
+
+.nav-sidebar { 
+    width: 100%;
+    padding: 30px 0; 
+    border-right: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+}
+.nav-sidebar .active a { 
+    cursor: default;
+    background-color: #0b56a8; 
+    color: #fff; 
+}
+.nav-sidebar .active a:hover {
+    background-color: #E50000;   
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; }
-  .method .cell .type {
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
+
+.btn-blog {
+    color: #ffffff;
+    background-color: #E50000;
+    border-color: #E50000;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#0b56a8;
+    border-color: #0b56a8;
+}
+article h2{color:#333333;}
+h2{color:#0b56a8;}
+ .margin10{
+ 	margin-bottom:10px; 
+ 	margin-right:10px;
+ }
+ 
+ .container .text-style
+{
+  text-align: justify;
+  line-height: 23px;
+  margin: 30px 13px 30px 0;
+  font-size: 19px;
+}
+
+.mobile-social-share {
+    background: none repeat scroll 0 0 #EEEEEE;
+    display: block !important;
+    min-height: 70px !important;
+    margin: 50px 0;
+}
+
+body {
+    color: #777777;
+    font-family: "Lato","Helvetica Neue","Arial","Helvetica",sans-serif;
+    font-size: 13px;
+    line-height: 19.5px;
+}
+
+
+.mobile-social-share h3 {
+    color: inherit;
+    float: left;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 25px 25px 0 25px;
+}
+
+.share-group {
+    float: right;
+    margin: 18px 25px 0 0;
+}
+
+.btn-group {
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+    vertical-align: middle;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .method .cell code {
-    color: #428bca; }
-  .method .cell a, .method .cell a:hover {
-    text-decoration: none; }
-  .method .cell code.custom {
-    color: #8a6d3b;
-    text-decoration: none; }
-  .method .cell .text-muted {
-    color: #ddd; }
-@media (max-width: 991px) {
-  .method [class^="row"],
-  .method [class*=" row"] {
-    padding-top: 10px;
-    padding-bottom: 10px; }
-  .method .cell {
-    padding: 0 10px; }
-    .method .cell .propertyname {
-      font-weight: bold;
-      font-size: 1.2em; }
-      .method .cell .propertyname .lookuplink {
-        font-weight: normal;
-        font-size: 1.5em;
-        position: absolute;
-        top: 0;
-        right: 10px; }
-    .method .cell .type {
-      padding-left: 10px;
-      font-size: 1.1em; }
-    .method .cell .isrequired {
-      padding-left: 10px;
-      display: none; }
-    .method .cell .description {
-      padding-left: 10px; }
-    .method .cell .mobile-isrequired {
-      display: inline; } }
+}
 
+.mobile-social-share ul {
+    float: right;
+    list-style: none outside none;
+    margin: 0;
+    min-width: 61px;
+    padding: 0;
+}
 
-/* Row Utilities */
-[class^='row'].margin-0,
-[class*=' row'].margin-0,
-[class^='form-group'].margin-0,
-[class*=' form-group'].margin-0 {
-  margin-left: -0px;
-  margin-right: -0px; }
-  [class^='row'].margin-0 > [class^='col-'],
-  [class^='row'].margin-0 > [class*=' col-'],
-  [class*=' row'].margin-0 > [class^='col-'],
-  [class*=' row'].margin-0 > [class*=' col-'],
-  [class^='form-group'].margin-0 > [class^='col-'],
-  [class^='form-group'].margin-0 > [class*=' col-'],
-  [class*=' form-group'].margin-0 > [class^='col-'],
-  [class*=' form-group'].margin-0 > [class*=' col-'] {
-    padding-right: 0px;
-    padding-left: 0px; }
-  [class^='row'].margin-0 [class^='row'],
-  [class^='row'].margin-0 [class*=' row'],
-  [class^='row'].margin-0 [class^='form-group'],
-  [class^='row'].margin-0 [class*=' form-group'],
-  [class*=' row'].margin-0 [class^='row'],
-  [class*=' row'].margin-0 [class*=' row'],
-  [class*=' row'].margin-0 [class^='form-group'],
-  [class*=' row'].margin-0 [class*=' form-group'],
-  [class^='form-group'].margin-0 [class^='row'],
-  [class^='form-group'].margin-0 [class*=' row'],
-  [class^='form-group'].margin-0 [class^='form-group'],
-  [class^='form-group'].margin-0 [class*=' form-group'],
-  [class*=' form-group'].margin-0 [class^='row'],
-  [class*=' form-group'].margin-0 [class*=' row'],
-  [class*=' form-group'].margin-0 [class^='form-group'],
-  [class*=' form-group'].margin-0 [class*=' form-group'] {
-    margin-left: 0;
-    margin-right: 0; }
+.share {
+    min-width: 17px;
+}
+
+.mobile-social-share li {
+    display: block;
+    font-size: 18px;
+    list-style: none outside none;
+    margin-bottom: 3px;
+    margin-left: 4px;
+    margin-top: 3px;
+}
+
+.btn-share {
+    background-color: #BEBEBE;
+    border-color: #CCCCCC;
+    color: #333333;
+}
+
+.social {
+    display: block;
+    list-style: none outside none;
+    margin-bottom: 3px;
+    margin-left: 4px;
+    margin-top: 3px;
+}
+
+.btn-twitter {
+    background-color: #3399CC !important;
+    width: 51px;
+    color:#FFFFFF!important;
+
+}
+
+.btn-facebook {
+    background-color: #3D5B96 !important;
+    width: 51px;
+    color:#FFFFFF!important;
+}
+
+.btn-skype {
+    background-color: #3399CC !important;
+    width: 51px;
+    color:#FFFFFF!important;
+}
+
+.btn-google {
+    background-color: #DD3F34 !important;
+    width: 51px;
+    color:#FFFFFF!important;
+}
+
+.btn-linkedin {
+    background-color: #1884BB !important;
+    width: 51px;
+    color:#FFFFFF!important;
+}
+
+.btn-pinterest {
+    background-color: #CC1E2D !important;
+    width: 51px;
+    color:#FFFFFF!important;
+}
+
+.btn-mail {
+    background-color: #FFC90E !important;
+    width: 51px;
+    color:#FFFFFF!important;
+}
+
+.caret {
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-top: 4px solid;
+    display: inline-block;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    width: 0;
+}
+
+#socialShare {
+    max-width:59px;
+    margin-bottom:18px;
+}
+
+#socialShare > a{
+    padding: 6px 10px 6px 10px;
+}
+
+@media (max-width : 320px) {
+    #socialHolder{
+        padding-left:5px;
+        padding-right:5px;
+    }
     
+    .mobile-social-share h3 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    #socialShare{
+        margin-left:5px;
+        margin-right:5px;
+    }
+    
+    .mobile-social-share h3 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width : 238px) {
+    .mobile-social-share h3 {
+        font-size: 12px;
+    }
+}

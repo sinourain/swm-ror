@@ -56,20 +56,22 @@
           <ul class="nav navbar-nav navbar-right">
           	<% if user_signed_in? %>
           	<li class="active">
-          		<a class="glyphicon glyphicon-user" href="<%= edit_user_registration_path %>"> Logged in as <strong><%= current_user.name %> <%= current_user.last_name %>.</strong></a>
+          		<a href="<%= edit_user_registration_path %>"> Logged in as <strong><%= current_user.first_name %> <%= current_user.last_name %>.</strong></a>
           	</li>
-          	
+          	<li class="active">
+              <a class="navbar-brand glyphicon glyphicon-cog" href="<%= edit_user_registration_path %>"></a>
+            </li>
           	<li>
           		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
           	</li>			  
-			<% else %>
-			  <li class="active">
-			  	<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
-			  </li>
-			  <li>
-			  	<%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
-			  </li>
-			<% end %>
+      			<% else %>
+      			  <li class="active">
+      			  	<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+      			  </li>
+      			  <li>
+      			  	<%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+      			  </li>
+      			<% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -95,22 +97,15 @@
                   <h3 class="footer-widget-title">Sitemap</h3>
                   <ul class="list-unstyled three_cols">
                       <li><a href="/" class="active">Home</a></li>
-                      <li><a href="blog.html">Blog</a></li>
-                      <li><a href="portfolio_sidebar.html">Portafolio</a></li>
-                      <li><a href="portfolio_topvar.html">Works</a></li>
-                      <li><a href="page_timeline_left.html">Timeline</a></li>
-                      <li><a href="page_pricing.html">Pricing</a></li>
-                      <li><a href="page_about2.html">About Us</a></li>
-                      <li><a href="page_team.html">Our Team</a></li>
-                      <li><a href="page_services.html">Services</a></li>
-                      <li><a href="page_support.html">FAQ</a></li>
-                      <li><a href="page_login_full.html">Login</a></li>
-                      <li><a href="page_contact.html">Contact</a></li>
+                      <li><a href="microposts">Micropost</a></li>
+                      <li><a href="profile/index">Profile</a></li>
+                      <li><a href="about/index">About</a></li>
+                      <li><a href="<%= edit_user_registration_path %>">Edit profile</a></li>
                   </ul>
               </div>
               <div class="col-md-6">
                   <h3 class="footer-widget-title">Subscribe</h3>
-                  <p>Lorem ipsum Amet fugiat elit nisi anim mollit minim labore ut esse Duis ullamco ad dolor veniam velit.</p>
+                  <p>Subscribe now! we are enemies of spam.</p>
                   <div class="input-group">
                       <input type="text" class="form-control" placeholder="Email Address">
                       <span class="input-group-btn">
@@ -125,4 +120,5 @@
         <p>© 2014 <a href="/">UMSoft</a>, corp. All rights reserved.</p>
       </footer>
   </body>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </html>
