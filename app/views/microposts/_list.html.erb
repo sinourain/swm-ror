@@ -5,7 +5,7 @@
     <li class="event">
       <p><%= micropost.content %></p>
       <p><%= micropost.created_at %></p>
-      <%= micropost.user.name %> <%= micropost.user.last_name %>
+      <%= micropost.user.first_name %> <%= micropost.user.last_name %>
       <%= link_to 'Edit', edit_micropost_path(micropost) %>
       <%= link_to 'Destroy', micropost, method: :delete %>
     </li>
