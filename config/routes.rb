@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  patch 'update_like',to: 'microposts#update_like', as: 'update_like'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

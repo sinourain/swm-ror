@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :set_micropost, only: [:show, :edit, :update, :destroy]
+  before_action :set_micropost, only: [:show, :edit, :update, :destroy, :update_like]
   before_action :authenticate_user!
 
   # GET /microposts
@@ -61,6 +61,20 @@ class MicropostsController < ApplicationController
       format.html { redirect_to microposts_url, notice: 'Micropost was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def update_like
+
+    @micropost = Micropost.find(params[:id])
+    
+    if @micropost.like.nil?
+      @micropost.like = 0
+    end
+
+    @micropost.update_attributes(:like => @micropost.like.next )
+
+    
+    
   end
 
   private
