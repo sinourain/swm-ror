@@ -71,9 +71,7 @@ class MicropostsController < ApplicationController
       @micropost.like = 0
     end
 
-    @micropost.update_attributes(:like => @micropost.like.next )
-
-    
+    @micropost.update_attributes(:like => @micropost.like.next)
     
   end
 

@@ -2,8 +2,9 @@
   <% @microposts.each do |micropost| %>
     <li class="event">
       <p><%= micropost.content %></p>
-      <p>created at: <%= micropost.created_at %></p>
-      <%= link_to "like #{micropost.like}", update_like_path(:id => micropost.id), :method => :patch, remote: true %>
+      <p><%= link_to "like #{micropost.like}", update_like_path(:id => micropost.id), :method => :patch, remote: true %> | 
+      created at: <%= micropost.created_at %></p>
+      
       <%= micropost.user.first_name %> <%= micropost.user.last_name %>
       <%= link_to 'Edit', edit_micropost_path(micropost) %>
       <%= link_to 'Destroy', micropost, method: :delete %>

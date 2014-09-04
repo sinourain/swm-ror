@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  get 'profile/index'
+
+  match 'about/index',  to: 'about#index', as: 'about', via: :get
+  match 'profile/index',  to:'profile#index',as: 'profile', via: :get
+  match 'welcome/index',  to:'welcome#index', as: 'welcome', via: :get
 
   resources :microposts
-
-  get 'about/index'
-
-  get 'welcome/index'
-
-  patch 'update_like',to: 'microposts#update_like', as: 'update_like'
+  
+  match 'update_like',  to: 'microposts#update_like', as: 'update_like', via: :patch
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
