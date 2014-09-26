@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Comments" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Safe Wireless Monitor" %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -32,7 +32,9 @@
 
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'http://wcdn4.dataknet.com/static/resources/icons/set113/fd758d6c.png', :rel => 'shortcut icon' %>
+    <%= favicon_link_tag 'http://megaicons.net/static/img/icons_sizes/8/178/512/transport-speedometer-icon.png', :rel => 'shortcut icon' %>
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <%= javascript_include_tag "application" %>
   </head>
@@ -46,12 +48,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand glyphicon glyphicon-comment" href="<%= welcome_path %>"> Comments</a>
+          <a class="navbar-brand glyphicon glyphicon-dashboard" href="<%= welcome_path %>"> <strong>Safe Wireless Monitor</strong></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<%= profile_path %>">Profile</a></li>
-            <li><a href="<%= about_path %>">About</a></li>
+            <!-- <li class="active"><a href="<%= profile_path %>">Profile</a></li> -->
+            <li><a href="<%= welcome_path %>">Home</a></li>
+            <li><a href="#work">Our work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="<%= about_path %>">About us</a></li> -->
+            <!-- <li><a href="<%= microposts_path %>">News</a></li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
           	<% if user_signed_in? %>
@@ -87,21 +93,24 @@
 
     <!-- footer -->
     <aside id="footer-widgets">
-      <div class="container">
+      <div class="container" >
           <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-5">
                   <h3 class="footer-widget-title">Sitemap</h3>
                   <ul class="list-unstyled three_cols">
                       <li><a href="<%= welcome_path %>" class="active">Home</a></li>
-                      <li><a href="microposts">Micropost</a></li>
-                      <li><a href="<%= profile_path %>">Profile</a></li>
-                      <li><a href="<%= about_path %>">About</a></li>
-                      <li><a href="<%= edit_user_registration_path %>">Edit profile</a></li>
+                      <li><a href="microposts">News</a></li>
+                      <!-- <li><a href="<%= profile_path %>">Profile</a></li> -->
+                      <!-- <li><a href="<%= about_path %>">About us</a></li> -->
+                      <!-- <li><a href="<%= edit_user_registration_path %>">Edit profile</a></li> -->
                   </ul>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                   <h3 class="footer-widget-title">Subscribe</h3>
                   <p>Subscribe now! we are enemies of spam.</p>
+              </div>
+              <div class="col-md-4">
+                  </br>
                   <div class="input-group">
                       <input type="text" class="form-control" placeholder="Email Address">
                       <span class="input-group-btn">
@@ -113,7 +122,7 @@
       </div> <!-- container -->
   </aside>
     <footer id="footer">
-        <p>© 2014 <a href="<%= welcome_path %>">UMSoft</a>, corp. All rights reserved.</p>
+        <p>© 2014 <a href="<%= welcome_path %>">Safe Wireless Inc. All rights reserved.</p>
       </footer>
   </body>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">

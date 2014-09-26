@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   match 'about/index',  to: 'about#index', as: 'about', via: :get
   match 'profile/index',  to:'profile#index',as: 'profile', via: :get
   match 'welcome/index',  to:'welcome#index', as: 'welcome', via: :get
+  match 'microposts/index',  to:'microposts#index', as: 'microposts', via: :get
 
   resources :microposts
   
